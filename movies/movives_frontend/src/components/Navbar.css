@@ -1,0 +1,119 @@
+:root {
+    --color-white: hsl(252, 30%, 100%);
+    --color-light: hsl(252, 30%, 95%);  
+    --color-gray: hsl(252, 15%, 65%);
+    --color-primary: hsl(252, 75%, 60%);
+    --color-secondary: hsl(252, 100%, 90%);
+    --color-success: hsl(120, 79%, 36%);
+    --color-danger: hsl(211, 82%, 78%);
+    --color-dark: hsl(252, 30%, 10%);
+    --color-black: hsl(252, 30%, 10%);
+    --color-random: hsl(293, 34%, 56%);
+    --color-gradient: linear-gradient(to right, #e2336b, #fcac46);
+
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem, 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 0.6rem;
+
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
+}
+
+*, *::before, &::after {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-random);
+    padding: 20px 80px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+}
+
+#Navbar_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Navbar_btn li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#Navbar_btn li a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.1s ease-in-out;
+}
+
+#Navbar_btn li a:hover,
+#Navbar_btn li a.active{
+    color: var(--color-primary);
+}
+
+#Navbar_btn li a:hover::after,
+#Navbar_btn li a.active::after{
+    content: "";
+    width: 50%;
+    height: 2px;
+    background: var(--color-primary);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#Navbar_btn_mobile {
+    display: none;
+}
+
+#Navbar_btn_mobile i{
+    color: var(--color-light);
+    align-items: center;
+}
+
+@media screen and (max-width: 769px) {
+    #Navbar_btn{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        position: fixed;
+        top: 90px;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background: var(--color-random);
+        box-shadow: 0 40px 60px var(--color-black);
+        padding: 40px 0 0 10px;
+    }
+
+    #Navbar_btn.active {
+        right: 0px;
+    }
+    
+    #Navbar_btn li {
+        margin-bottom: 25px;
+    }
+
+    #Navbar_btn_mobile {
+        display: block;
+    }
+
+    #Navbar_btn_mobile i{
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
