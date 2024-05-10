@@ -1,13 +1,7 @@
-import { useState } from "react";
 import "./Navbar.css"
+import "./Toggle.css"
 
 function Navbar(){
-    const [clicked, setClicked] = useState(false);
-
-    const handleToggle = () => {
-        setClicked(!clicked);
-    };
-
     return(
         <>
         <nav>
@@ -28,6 +22,8 @@ function Navbar(){
             <div id="Navbar_btn_mobile" onClick={handleToggle}>
                     <i id="bar" className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
             </div>
+
+            <div class="toggle"></div>
         </nav>
         </>
     )
