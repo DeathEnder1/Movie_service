@@ -1,0 +1,26 @@
+import React from 'react';
+import Navlistitem from '../components/Navlistitem';
+import Navlistdata from '../data/Navlistdata';
+import Search from '../components/Search';
+
+import './Navbar.css';
+
+function Navbar() {
+  return (
+    <header>
+        <a href='/' className='logo'>
+            Hentai.com
+        </a>
+        <ul className='btn'>
+            {
+                Navlistdata.map(btn => (
+                    <Navlistitem key={btn._id} btn={btn} />
+                ))
+            }
+        </ul>
+        <Search />
+    </header>
+  )
+}
+
+export default Navbar
