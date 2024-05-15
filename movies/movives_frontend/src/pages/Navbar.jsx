@@ -4,6 +4,7 @@ import Navlistdata from '../data/Navlistdata';
 import Search from '../components/Search';
 
 import './Navbar.css';
+import Button from '../components/Button';
 
 function Navbar() {
   return (
@@ -11,6 +12,7 @@ function Navbar() {
         <a href='/' className='logo'>
             Hentai.com
         </a>
+
         <ul className='btn'>
             {
                 Navlistdata.map(btn => (
@@ -18,7 +20,10 @@ function Navbar() {
                 ))
             }
         </ul>
+
         <Search />
+
+        <Button icon={<ion-icon name="log-in-outline"></ion-icon>} name='Sign in'/>
     </header>
   )
 }

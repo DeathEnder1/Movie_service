@@ -7,6 +7,7 @@ import PlayBtn from '../components/PlayBtn';
 import bgImg from '../images/bg-the-covenant.jpeg'
 
 import './Banner.css';
+import MovieSwiper from '../components/MovieSwiper';
 
 
 function Banner() {
@@ -41,6 +42,8 @@ function Banner() {
           </div>
         </div>
       </div>
+      {movies && movies.length>0 && <MovieSwiper slides={movies}/>}
+      
     </div>
   )
 }
