@@ -16,6 +16,8 @@
                     <th>Release Date</th>
                     <th>Trailer Link</th>
                     <th>Poster</th>
+                    <th>Genres</th>
+                    <th>Backdrops</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +28,18 @@
                     <td th:text="${movie.release_date}">2024-01-01</td>
                     <td><a th:href="${movie.trailer_link}" th:text="${movie.trailer_link}">Trailer</a></td>
                     <td><img th:src="${movie.poster}" alt="Poster" style="width: 100px;"/></td>
+                    <td>
+                        <ul>
+                            <li th:each="genre : ${movie.genres}" th:text="${genre}">Genre</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li th:each="backdrop : ${movie.backdrops_link}">
+                                <img th:src="${backdrop}" alt="Backdrop" style="width: 100px;"/>
+                            </li>
+                        </ul>
+                    </td>
                 </tr>
             </tbody>
         </table>

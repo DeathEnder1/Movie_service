@@ -1,5 +1,6 @@
 package com.buncua.movies.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,7 +44,17 @@ public class MovieController {
 
     @GetMapping("/movies")
     public String getAllMovies(Model model) {
-        model.addAttribute("movies", movieService.allMovies());
+        List<Movie> movies = movieService.allMovies();
+        // Initialize lists to avoid null pointers
+        for (Movie movie : movies) {
+            if (movie.getGenres() == null) {
+                movie.setGenres(new ArrayList<>());
+            }
+            if (movie.getBackdrops_link() == null) {
+                movie.setBackdrops_link(new ArrayList<>());
+            }
+        }
+        model.addAttribute("movies", movies);
         return "movies";
     }
-}
+    }

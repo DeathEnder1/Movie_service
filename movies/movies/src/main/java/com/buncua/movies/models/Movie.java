@@ -32,15 +32,15 @@ public class Movie {
     @Column
     private String poster;
 
-    // @ElementCollection
-    // @CollectionTable(name = "movie_genres", joinColumns = @JoinColumn(name = "movie_id"))
-    // @Column(name = "genre")
-    // private List<String> genres;
+    @ElementCollection
+    @CollectionTable(name = "movie_genres", joinColumns = @JoinColumn(name = "movie_id"))
+    @Column(name = "genre")
+    private List<String> genres;
 
-    // @ElementCollection
-    // @CollectionTable(name = "movie_backdrops", joinColumns = @JoinColumn(name = "movie_id"))
-    // @Column(name = "backdrop")
-    // private List<String> backdrops;
+    @ElementCollection
+    @CollectionTable(name = "movie_backdrops", joinColumns = @JoinColumn(name = "movie_id"))
+    @Column(name = "backdrop_link")
+    private List<String> backdrops_link;
 
     // Lombok will handle the generation of getters and setters
     // If you do not use Lombok, you need to manually add the getters and setters like this:
