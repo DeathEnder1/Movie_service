@@ -2,7 +2,6 @@
   "short_name": "React App",
   "name": "Create React App Sample",
   "icons": [
-    //File đã bị xóa vì không cần thiết, tất cả ở đây được dữ lại để nhớ xem nó gán cái j
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",

@@ -1,0 +1,30 @@
+.Banner .date{
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: 1s;
+    z-index: 1000;
+}
+
+.Banner .date.active{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.Banner .date h2{
+    font-family: 'Racing Sans One', cursive;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 7rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.);
+    -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 120%);
+    -webkit-mask-clip: text;
+    -webkit-mask-composite: xor;
+    mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 120%);
+    mask-clip: text;
+    mask-composite: xor;
+}
