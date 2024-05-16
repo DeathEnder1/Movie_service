@@ -25,36 +25,36 @@ import com.buncua.movies.service.MovieService;
 // import org.springframework.web.bind.annotation.RequestMethod;
 // import org.springframework.web.bind.annotation.RequestParam;
 
-// @RestController
-// @RequestMapping("/movies")
-// public class MovieController {
-//     @Autowired
-//     private MovieRepository MovieRepository;
-
-//     @GetMapping("")
-//     public List<Movie> getAllMovies() {
-//         return MovieRepository.findAll();
-//     }
-// }
-@Controller
+@RestController
+@RequestMapping("/movies")
 public class MovieController {
-
     @Autowired
-    private MovieService movieService;
+    private MovieRepository MovieRepository;
 
-    @GetMapping("/movies")
-    public String getAllMovies(Model model) {
-        List<Movie> movies = movieService.allMovies();
-        // Initialize lists to avoid null pointers
-        for (Movie movie : movies) {
-            if (movie.getGenres() == null) {
-                movie.setGenres(new ArrayList<>());
-            }
-            if (movie.getBackdrops_link() == null) {
-                movie.setBackdrops_link(new ArrayList<>());
-            }
-        }
-        model.addAttribute("movies", movies);
-        return "movies";
+    @GetMapping("")
+    public List<Movie> getAllMovies() {
+        return MovieRepository.findAll();
     }
-    }
+}
+// @Controller
+// public class MovieController {
+
+//     @Autowired
+//     private MovieService movieService;
+
+//     @GetMapping("/movies")
+//     public String getAllMovies(Model model) {
+//         List<Movie> movies = movieService.allMovies();
+//         // Initialize lists to avoid null pointers
+//         for (Movie movie : movies) {
+//             if (movie.getGenres() == null) {
+//                 movie.setGenres(new ArrayList<>());
+//             }
+//             if (movie.getBackdrops_link() == null) {
+//                 movie.setBackdrops_link(new ArrayList<>());
+//             }
+//         }
+//         model.addAttribute("movies", movies);
+//         return "movies";
+//     }
+//     }
