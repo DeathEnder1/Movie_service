@@ -3,12 +3,9 @@ import React, {useState, useEffect} from 'react';
 import MovieContent from '../components/MovieContent';
 import MovieData from '../components/MovieData';
 import PlayBtn from '../components/PlayBtn';
-
-import bgImg from '../images/bg-the-covenant.jpeg'
-
-import './Banner.css';
 import MovieSwiper from '../components/MovieSwiper';
 
+import './Banner.css';
 
 function Banner() {
   const [movies, setMovies] = useState([]);
@@ -24,25 +21,34 @@ function Banner() {
     fetchData()
   }, [])
 
+  const handleSlideChange = id =>{
+    console.log(id);
+  }
+
   return (
     <div className="Banner">
-      <div className="movie">
-        <img src={bgImg} alt="Background Image" className="bgImg active" />
-        <div className="container-fuild">
-          <div className="row">
-            {/* Content movie is here */}
-            <div className="col-lg-6 col-md-12">
-              <MovieContent />
-            </div>
-            {/* Data movie is here */}
-            <div className="col-lg-6 col-md-12">
-              <MovieData />
-              <PlayBtn />
+      {
+        movies && movies.length>0 && movies.map(movie=>(
+          <div className="movie">
+            <img src={movie.bgImg} alt="Background Image" className={`bgImg ${movie.active ? 'active' : undefined}`} />
+            <div className="container-fuild">
+              <div className="row">
+                {/* Content movie is here */}
+                <div className="col-lg-6 col-md-12">
+                  <MovieContent movie={movie}/>
+                </div>
+                {/* Data movie is here */}
+                <div className="col-lg-6 col-md-12">
+                  <MovieData movie={movie}/>
+                  <PlayBtn movie={movie}/>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      {movies && movies.length>0 && <MovieSwiper slides={movies}/>}
+        ))
+      }
+
+      {movies && movies.length>0 && <MovieSwiper slides={movies} slideChange={handleSlideChange}/>}
       
     </div>
   )

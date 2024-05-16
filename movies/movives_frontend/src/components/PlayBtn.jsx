@@ -3,7 +3,7 @@ import './PlayBtn.css'
 
 function PlayBtn() {
   return (
-    <div className="trailer active">
+    <div className="trailer">
         <a href="#" className="playBtn">
         <ion-icon name="play-outline"></ion-icon>
         </a>
