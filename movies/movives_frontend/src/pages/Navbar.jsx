@@ -2,6 +2,7 @@ import React from 'react';
 import Navlistitem from '../components/Navlistitem';
 import Navlistdata from '../data/Navlistdata';
 import Search from '../components/Search';
+import { Link } from 'react-router-dom';
 
 import './Navbar.css';
 import Button from '../components/Button';
@@ -20,7 +21,9 @@ function Navbar() {
                 ))
             }
         </ul>
-
+        <nav>
+            <Link to="/admin">admin_page</Link>
+        </nav>
         <Search />
 
         <Button icon={<ion-icon name="log-in-outline"></ion-icon>} name='Sign in'/>
