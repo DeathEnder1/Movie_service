@@ -36,7 +36,7 @@ function MovieSwiper({slides, slideChange}) {
         {
             slides.map(slide => (
                 <SwiperSlide key={slide._id}>
-                    <img src={slide.previewImg} alt="Preview Image" onClick={()=>slideChange(slide._id)}/>
+                    <img src={slide.previewimg} alt="Preview Image" onClick={()=>slideChange(slide._id)}/>
                 </SwiperSlide>
             ))
         }

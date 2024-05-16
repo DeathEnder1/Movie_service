@@ -6,10 +6,10 @@ import Button from './Button';
 function MovieContent({movie}) {
   return (
     <div className={`content ${movie.active ? 'active': undefined}`}>
-        <img src={movie.titleImg} alt="Movie Title" className="movie-title" />
+        <img src={movie.titleimg} alt="Movie Title" className="movie-title" />
         <h4>
             <span>{movie.year}</span>
-            <span><i>{movie.ageLimit}</i></span>
+            <span><i>{movie.agelimit}</i></span>
             <span>{movie.length}</span>
             <span>{movie.category}</span>
         </h4>

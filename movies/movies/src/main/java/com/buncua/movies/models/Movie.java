@@ -1,46 +1,49 @@
-package com.buncua.movies.models;
+// package com.buncua.movies.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import jakarta.persistence.*;
-import java.util.List;
+// import lombok.AllArgsConstructor;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
+// import jakarta.persistence.*;
+// import java.util.List;
 
-@Entity
-@Table(name = "movies")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Movie {
+// @Entity
+// @Table(name = "movies")
+// @Data
+// @AllArgsConstructor
+// @NoArgsConstructor
+// public class Movie {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//     @Id
+//     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//     private Long id;
 
-    @Column(name = "imdb_id", nullable = false, unique = true)
-    private String imdb_id;
+//     @Column(name = "imdb_id", nullable = false, unique = true)
+//     private String imdb_id;
 
-    @Column(nullable = false)
-    private String title;
+//     @Column(nullable = false)
+//     private String title;
 
-    @Column(name = "release_date")
-    private String release_date;
+//     @Column(name = "release_date")
+//     private String release_date;
 
-    @Column(name = "trailer_link")
-    private String trailer_link;
+//     @Column(name = "trailer_link")
+//     private String trailer_link;
 
-    @Column
-    private String poster;
+//     @Column
+//     private String poster;
 
-    @ElementCollection
-    @CollectionTable(name = "movie_genres", joinColumns = @JoinColumn(name = "movie_id"))
-    @Column(name = "genre")
-    private List<String> genres;
+//     @Column 
+//     private Boolean active;
 
-    @ElementCollection
-    @CollectionTable(name = "movie_backdrops", joinColumns = @JoinColumn(name = "movie_id"))
-    @Column(name = "backdrop_link")
-    private List<String> backdrops_link;
+//     @ElementCollection
+//     @CollectionTable(name = "movie_genres", joinColumns = @JoinColumn(name = "movie_id"))
+//     @Column(name = "genre")
+//     private List<String> genres;
+
+//     @ElementCollection
+//     @CollectionTable(name = "movie_backdrops", joinColumns = @JoinColumn(name = "movie_id"))
+//     @Column(name = "backdrop_link")
+//     private List<String> backdrops_link;
 
     // Lombok will handle the generation of getters and setters
     // If you do not use Lombok, you need to manually add the getters and setters like this:
@@ -110,4 +113,63 @@ public class Movie {
         this.backdrops = backdrops;
     }
     */
+//}
+
+package com.buncua.movies.models;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "movies")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Movie {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "titleimg", nullable = false)
+    private String titleimg;
+
+    @Column(name = "bgimg", nullable = false)
+    private String bgimg;
+
+    @Column(name = "previewimg", nullable = false)
+    private String previewimg;
+
+    @Column(name = "video", nullable = false)
+    private String video;
+
+    @Column(name = "title", nullable = false)
+    private String title;
+
+    @Column(name = "year", nullable = false)
+    private String year;
+
+    @Column(name = "date", nullable = false)
+    private String date;
+
+    @Column(name = "agelimit", nullable = false)
+    private String agelimit;
+
+    @Column(name = "length", nullable = false)
+    private String length;
+
+    @Column(name = "category", nullable = false)
+    private String category;
+
+    @Column(name = "type", nullable = false)
+    private String type;
+
+    @Column(name = "description", columnDefinition = "TEXT")
+    private String description;
+
+    @Column(name = "active", nullable = false)
+    private Boolean active;
 }
