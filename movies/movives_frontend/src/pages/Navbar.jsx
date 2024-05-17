@@ -21,9 +21,6 @@ function Navbar() {
                 ))
             }
         </ul>
-        <nav>
-            <Link to="/admin">admin_page</Link>
-        </nav>
         <Search />
 
         <Button icon={<ion-icon name="log-in-outline"></ion-icon>} name='Sign in'/>

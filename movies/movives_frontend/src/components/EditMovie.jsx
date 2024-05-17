@@ -1,7 +1,10 @@
+// EditMovie.jsx
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import MovieForm from './MovieForm';
 import { useParams, useNavigate } from 'react-router-dom';
+import './EditMovie.css';
 
 const EditMovie = () => {
     const { id } = useParams();
@@ -19,13 +22,15 @@ const EditMovie = () => {
     const handleEditMovie = async (updatedMovie) => {
         await axios.put(`http://localhost:8080/movies/${id}`, updatedMovie);
         alert('Movie updated successfully');
-        navigate('/');
+        navigate('/admin');
     };
 
     return (
-        <div>
-            <h2>Edit Movie</h2>
-            {movie && <MovieForm initialData={movie} onSubmit={handleEditMovie} />}
+        <div className="edit-movie-container">
+            <h2 className="edit-movie-heading">Edit Movie</h2>
+            <div className="edit-movie-form-container">
+                {movie && <MovieForm initialData={movie} onSubmit={handleEditMovie} />}
+            </div>
         </div>
     );
 };
