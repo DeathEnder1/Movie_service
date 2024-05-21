@@ -1,8 +1,8 @@
 import React from 'react';
 import 'swiper/css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Navbar from './pages/Navbar';
-import NavbarAdmin from './pages/NavbarAdmin'; 
 import Banner from './pages/Banner';
 import MovieList from './components/MovieList';
 import AddMovie from './components/AddMovie';
@@ -15,7 +15,7 @@ function App() {
       <>
         <Router>
           <Routes>
-            <Route index element={<><Navbar /><Banner /><NavbarAdmin /></>} />     
+            <Route index element={<><Navbar /><Banner /></>} />     
             <Route path="/admin" element={<MovieList />} />
             <Route path="/add" element={<AddMovie />} />
             <Route path="/edit/:id" element={<EditMovie />} />

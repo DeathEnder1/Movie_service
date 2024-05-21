@@ -2,7 +2,7 @@ import React from 'react';
 import Navlistitem from '../components/Navlistitem';
 import Navlistdata from '../data/Navlistdata';
 import Search from '../components/Search';
-import { Link } from 'react-router-dom';
+
 
 import './Navbar.css';
 import Button from '../components/Button';
@@ -21,7 +21,10 @@ function Navbar() {
                 ))
             }
         </ul>
+
         <Search />
+        
+        {/* <Link to='/admin' className='admin-link' rel="noopener noreferrer">Admin</Link> */}
 
         <Button icon={<ion-icon name="log-in-outline"></ion-icon>} name='Sign in'/>
     </header>
