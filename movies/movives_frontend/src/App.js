@@ -1,7 +1,6 @@
 import React from 'react';
 import 'swiper/css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 import Navbar from './pages/Navbar';
 import Banner from './pages/Banner';
 import MovieList from './components/MovieList';

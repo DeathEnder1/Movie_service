@@ -1,125 +1,47 @@
 CREATE TABLE movies (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    imdb_id VARCHAR(50),
+    id INT PRIMARY KEY,
+    titleimg VARCHAR(255),
+    bgimg VARCHAR(255),
+    previewimg VARCHAR(255),
+    video VARCHAR(255),
     title VARCHAR(255),
-    release_date DATE,
-    trailer_link VARCHAR(511),
-    poster VARCHAR(255)
+    year VARCHAR(4),
+    date VARCHAR(50),
+    agelimit VARCHAR(10),
+    length VARCHAR(10),
+    category VARCHAR(50),
+    type VARCHAR(50),
+    description TEXT,
+    active BOOLEAN
 );
 
-CREATE TABLE movie_genres (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    movie_id INT,
-    genre VARCHAR(50),
-    FOREIGN KEY (movie_id) REFERENCES movies(id)
-);
 
-CREATE TABLE movie_backdrops (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    movie_id INT,
-    backdrop_link VARCHAR(255),
-    FOREIGN KEY (movie_id) REFERENCES movies(id)
-);
+INSERT INTO movies (id, titleimg, bgimg, previewimg, video, title, year, date, agelimit, length, category, type, description, active) VALUES
+(1, '../assets/movies/transformer-title.png', '../assets/movies/bg-transformer.jpg', '../assets/movies/transformer.jpg', 'https://www.youtube.com/embed/TxPNrwbuxN0', 'Transformer', '2023', '18th September', '15+', '2h 07min', 'Adventure', 'coming', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo felis tempor augue tristique, eget dignissim sapien ornare. Nullam vel hendrerit metus, a interdum risus. Etiam commodo lorem arcu, a tempus risus tempus sed. Proin ornare nec massa eget rhoncus. In rutrum aliquet dui, et placerat est molestie id.', true);
 
-INSERT INTO movies (imdb_id, title, release_date, trailer_link, poster)
-VALUES
-    ('tt3915174', 'Puss in Boots: The Last Wish', '2022-12-21', 'https://www.youtube.com/watch?v=tHb7WlgyaUc', 'https://image.tmdb.org/t/p/w500/1NqwE6LP9IEdOZ57NCT51ftHtWT.jpg'),
-    ('tt1630029', 'Avatar: The Way of Water', '2022-12-16', 'https://www.youtube.com/watch?v=d9MyW72ELq0', 'https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg'),
-    ('tt8760708', 'M3GAN', '2023-01-06', 'https://www.youtube.com/watch?v=BRb4U99OU80', 'https://image.tmdb.org/t/p/w500/xBl5AGw7HXZcv1nNXPlzGgO4Cfo.jpg'),
-    ('tt11116912', 'Troll', '2022-12-01', 'https://www.youtube.com/watch?v=AiohkY_XQYQ', 'https://image.tmdb.org/t/p/w500/9z4jRr43JdtU66P0iy8h18OyLql.jpg'),
-    ('tt6443346', 'Black Adam', '2022-10-19', 'https://www.youtube.com/watch?v=JaV7mmc9HGw', 'https://image.tmdb.org/t/p/w500/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg'),
-    ('tt0499549', 'Avatar', '2009-12-15', 'https://www.youtube.com/watch?v=5PSNL1qE6VY', 'https://image.tmdb.org/t/p/w500/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg'),
-    ('tt3447590', 'Roald Dahl''s Matilda the Musical', '2022-11-25', 'https://www.youtube.com/watch?v=lroAhsDr2vI', 'https://image.tmdb.org/t/p/w500/ga8R3OiOMMgSvZ4cOj8x7prUNYZ.jpg'),
-    ('tt9114286', 'Black Panther: Wakanda Forever', '2022-11-11', 'https://www.youtube.com/watch?v=_Z3QKkl1WyM', 'https://image.tmdb.org/t/p/w500/cryEN3sWlgB2wTzcUNVtDGI8bkM.jpg'),
-    ('tt10298840', 'Strange World', '2022-11-23', 'https://www.youtube.com/watch?v=bKh2G73gCCs', 'https://image.tmdb.org/t/p/w500/kgJ8bX3zDQDM2Idkleis28XSVnu.jpg'),
-    ('tt8093700', 'The Woman King', '2022-09-15', 'https://www.youtube.com/watch?v=3RDaPV_rJ1Y', 'https://image.tmdb.org/t/p/w500/5O1GLla5vNuegqNxNhKL1OKE1lO.jpg');
+INSERT INTO movies (id, titleimg, bgimg, previewimg, video, title, year, date, agelimit, length, category, type, description, active) VALUES
+(2, '../assets/movies/meg-2-title.png', '../assets/movies/bg-meg-2.jpeg', '../assets/movies/meg-2.jpg', 'https://www.youtube.com/embed/dG91B3hHyY4', 'Meg 2', '2023', '04th August', '16+', '1h 56min', 'Thriller', 'coming', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo felis tempor augue tristique, eget dignissim sapien ornare. Nullam vel hendrerit metus, a interdum risus. Etiam commodo lorem arcu, a tempus risus tempus sed. Proin ornare nec massa eget rhoncus. In rutrum aliquet dui, et placerat est molestie id.', false);
 
-INSERT INTO movie_genres (movie_id, genre)
-VALUES
-    (1, 'Animation'),
-    (1, 'Action'),
-    (1, 'Adventure'),
-    (1, 'Comedy'),
-    (1, 'Family'),
-    (2, 'Science Fiction'),
-    (2, 'Action'),
-    (2, 'Adventure'),
-    (3, 'Science Fiction'),
-    (3, 'Horror'),
-    (3, 'Comedy'),
-    (4, 'Fantasy'),
-    (4, 'Action'),
-    (4, 'Adventure'),
-    (5, 'Fantasy'),
-    (5, 'Action'),
-    (5, 'Science Fiction'),
-    (6, 'Fantasy'),
-    (6, 'Action'),
-    (6, 'Science Fiction'),
-    (6, 'Adventure'),
-    (7, 'Fantasy'),
-    (7, 'Family'),
-    (7, 'Comedy'),
-    (8, 'Action'),
-    (8, 'Adventure'),
-    (8, 'Science Fiction'),
-    (9, 'Family'),
-    (9, 'Adventure'),
-    (9, 'Science Fiction'),
-    (9, 'Animation'),
-    (10, 'Action'),
-    (10, 'Drama'),
-    (10, 'History');
+INSERT INTO movies (id, titleimg, bgimg, previewimg, video, title, year, date, agelimit, length, category, type, description, active) VALUES
+(3, '../assets/movies/fast-x-title.png', '../assets/movies/bg-fast-x.jpeg', '../assets/movies/fast-x.jpeg', 'https://www.youtube.com/embed/32RAq6JzY-w', 'Fast X', '2023', '04th October', '12+', '2h 21min', 'Action', 'coming', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo felis tempor augue tristique, eget dignissim sapien ornare. Nullam vel hendrerit metus, a interdum risus. Etiam commodo lorem arcu, a tempus risus tempus sed. Proin ornare nec massa eget rhoncus. In rutrum aliquet dui, et placerat est molestie id.', false);
 
-INSERT INTO movie_backdrops (movie_id, backdrop_link)
-VALUES
-    (1, 'https://image.tmdb.org/t/p/original/r9PkFnRUIthgBp2JZZzD380MWZy.jpg'),
-    (1, 'https://image.tmdb.org/t/p/original/faXT8V80JRhnArTAeYXz0Eutpv9.jpg'),
-    (1, 'https://image.tmdb.org/t/p/original/pdrlEaknhta2wvE2dcD8XDEbAI4.jpg'),
-    (1, 'https://image.tmdb.org/t/p/original/tGwO4xcBjhXC0p5qlkw37TrH6S6.jpg'),
-    (1, 'https://image.tmdb.org/t/p/original/cP8YNG3XUeBmO8Jk7Skzq3vwHy1.jpg'),
-    (2, 'https://image.tmdb.org/t/p/original/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg'),
-    (2, 'https://image.tmdb.org/t/p/original/evaFLqtswezLosllRZtJNMiO1UR.jpg'),
-    (2, 'https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg'),
-    (2, 'https://image.tmdb.org/t/p/original/zaapQ1zjKe2BGhhowh5pM251Gpl.jpg'),
-    (2, 'https://image.tmdb.org/t/p/original/tQ91wWQJ2WRNDXwxuO7GCXX5VPC.jpg'),
-    (3, 'https://image.tmdb.org/t/p/original/5kAGbi9MFAobQTVfK4kWPnIfnP0.jpg'),
-    (3, 'https://image.tmdb.org/t/p/original/dlxzUj7z1MqEcFiwvvrj0bvBKDY.jpg'),
-    (3, 'https://image.tmdb.org/t/p/original/q2fY4kMXKoGv4CQf310MCxpXlRI.jpg'),
-    (3, 'https://image.tmdb.org/t/p/original/pTxwFdsdDWzpCRYuk1QbggdaOlL.jpg'),
-    (3, 'https://image.tmdb.org/t/p/original/1zuz2RgFoOjulkjjNHHFc3WiHGB.jpg'),
-    (4, 'https://image.tmdb.org/t/p/original/53BC9F2tpZnsGno2cLhzvGprDYS.jpg'),
-    (4, 'https://image.tmdb.org/t/p/original/e9Qb2kmBnMXHCmNMI8NX1JbWhh1.jpg'),
-    (4, 'https://image.tmdb.org/t/p/original/2WjOOOGUu6dp4r8VqR5n48DY7JG.jpg'),
-    (4, 'https://image.tmdb.org/t/p/original/duIsyybgrC4S8kcCIVaxNOttV15.jpg'),
-    (4, 'https://image.tmdb.org/t/p/original/3RS8runn9AfrYDzRVPWuGPmvXQf.jpg'),
-    (5, 'https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg'),
-    (5, 'https://image.tmdb.org/t/p/original/9hNtTwY8P5v2MKnUeb7iuREI7Yb.jpg'),
-    (5, 'https://image.tmdb.org/t/p/original/zplntIhzXyBiXFYWReETxh0uyFF.jpg'),
-    (5, 'https://image.tmdb.org/t/p/original/yxkhM18dYwsRRffLnd9lz2d4i0v.jpg'),
-    (5, 'https://image.tmdb.org/t/p/original/bgaBKREAfUtZgvd6zoV6RQRcIUt.jpg'),
-    (6, 'https://image.tmdb.org/t/p/original/o0s4XsEDfDlvit5pDRKjzXR4pp2.jpg'),
-    (6, 'https://image.tmdb.org/t/p/original/8I37NtDffNV7AZlDa7uDvvqhovU.jpg'),
-    (6, 'https://image.tmdb.org/t/p/original/2YLOjUiczXEgVZFDSIeH3iWB3Ub.jpg'),
-    (6, 'https://image.tmdb.org/t/p/original/Yc9q6QuWrMp9nuDm5R8ExNqbEq.jpg'),
-    (6, 'https://image.tmdb.org/t/p/original/jlQJDD0L5ZojjlS0KYnApdO0n19.jpg'),
-    (7, 'https://image.tmdb.org/t/p/original/nWs0auTqn2UaFGfTKtUE5tlTeBu.jpg'),
-    (7, 'https://image.tmdb.org/t/p/original/bPftMelR4N3jUg2LTlEblFz0gWk.jpg'),
-    (7, 'https://image.tmdb.org/t/p/original/u2MLMkGEjJGQDs17Vmoej1RYFph.jpg'),
-    (7, 'https://image.tmdb.org/t/p/original/jG52tsazn04F1fe8hPZfVv7ICKt.jpg'),
-    (7, 'https://image.tmdb.org/t/p/original/4INEI7t7Vcg0cFvze7UIgwYCeSG.jpg'),
-    (8, 'https://image.tmdb.org/t/p/original/yYrvN5WFeGYjJnRzhY0QXuo4Isw.jpg'),
-    (8, 'https://image.tmdb.org/t/p/original/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg'),
-    (8, 'https://image.tmdb.org/t/p/original/cs3LpA38BS2XDPfUzdgMB537XOo.jpg'),
-    (8, 'https://image.tmdb.org/t/p/original/6SGMzCsaU094Mt32IHGkIYtIl06.jpg'),
-    (8, 'https://image.tmdb.org/t/p/original/bty0TwJGsxMqYRptgyzn28Cxq5y.jpg'),
-    (9, 'https://image.tmdb.org/t/p/original/5wDBVictj4wUYZ31gR5WzCM9dLD.jpg'),
-    (9, 'https://image.tmdb.org/t/p/original/zNIlXd7CAz0hHAInbs2nsFRc0xQ.jpg'),
-    (9, 'https://image.tmdb.org/t/p/original/1rukJHAP5p6DNHe75Oo1D0m3SnR.jpg'),
-    (9, 'https://image.tmdb.org/t/p/original/aKbe411WyjTZy1OZUVIdNDYVf21.jpg'),
-    (9, 'https://image.tmdb.org/t/p/original/9RKvxz0IryD2ofLYyGpnE7HeWlR.jpg'),
-    (10, 'https://image.tmdb.org/t/p/original/gkseI3CUfQtMKX41XD4AxDzhQb7.jpg'),
-    (10, 'https://image.tmdb.org/t/p/original/wSILunFEbvw00Ql2aaMHCSZf3cI.jpg'),
-    (10, 'https://image.tmdb.org/t/p/original/xTsERrOCW15OIYl5aPX7Jbj38wu.jpg'),
-    (10, 'https://image.tmdb.org/t/p/original/j06sSrtbqnZdSgG6yEduao95y48.jpg'),
-    (10, 'https://image.tmdb.org/t/p/original/v4YV4ne1nwNni35iz4WmpZRZpCD.jpg');
+INSERT INTO movies (id, titleimg, bgimg, previewimg, video, title, year, date, agelimit, length, category, type, description, active) VALUES
+(4, '../assets/movies/jailer-title.png', '../assets/movies/bg-jailer.jpeg', '../assets/movies/jailer.jpg', 'https://www.youtube.com/embed/lshAqOT7BB8', 'Jailer', '2023', '09th November', '15+', '2h 48min', 'Action', 'coming', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo felis tempor augue tristique, eget dignissim sapien ornare. Nullam vel hendrerit metus, a interdum risus. Etiam commodo lorem arcu, a tempus risus tempus sed. Proin ornare nec massa eget rhoncus. In rutrum aliquet dui, et placerat est molestie id.', false);
+
+INSERT INTO movies (id, titleimg, bgimg, previewimg, video, title, year, date, agelimit, length, category, type, description, active) VALUES
+(5, '../assets/movies/beautiful-disaster-title.png', '../assets/movies/bg-beautiful-disaster.jpeg', '../assets/movies/beautiful-disaster.jpeg', 'https://www.youtube.com/embed/nvaenzyXl4o', 'Beautiful Disaster', '2023', '12th November', '12+', '1h 45min', 'Romance', 'coming', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo felis tempor augue tristique, eget dignissim sapien ornare. Nullam vel hendrerit metus, a interdum risus. Etiam commodo lorem arcu, a tempus risus tempus sed. Proin ornare nec massa eget rhoncus. In rutrum aliquet dui, et placerat est molestie id.', false);
+
+INSERT INTO movies (id, titleimg, bgimg, previewimg, video, title, year, date, agelimit, length, category, type, description, active) VALUES
+(6, '../assets/movies/ape-title.png', '../assets/movies/bg-ape.jpeg', '../assets/movies/ape.jpg', 'https://www.youtube.com/embed/dtyPh5yCoWg', 'Ape vs. Mecha Ape', '2023', '30th December', '14+', '2h 45min', 'Thriller', 'coming', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo felis tempor augue tristique, eget dignissim sapien ornare. Nullam vel hendrerit metus, a interdum risus. Etiam commodo lorem arcu, a tempus risus tempus sed. Proin ornare nec massa eget rhoncus. In rutrum aliquet dui, et placerat est molestie id.', false);
+
+INSERT INTO movies (id, titleimg, bgimg, previewimg, video, title, year, date, agelimit, length, category, type, description, active) VALUES
+(7, '../assets/movies/assassin-title.png', '../assets/movies/bg-assassin.jpg', '../assets/movies/assassin.jpg', 'https://www.youtube.com/embed/qiUATuIhUw8', 'Assassin', '2023', '17th September', '16+', '1h 28min', 'Thriller', 'coming', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo felis tempor augue tristique, eget dignissim sapien ornare. Nullam vel hendrerit metus, a interdum risus. Etiam commodo lorem arcu, a tempus risus tempus sed. Proin ornare nec massa eget rhoncus. In rutrum aliquet dui, et placerat est molestie id.', false);
+
+INSERT INTO movies (id, titleimg, bgimg, previewimg, video, title, year, date, agelimit, length, category, type, description, active) VALUES
+(8, '../assets/movies/no-hard-feelings-title.png', '../assets/movies/bg-no-hard-feelings.jpeg', '../assets/movies/no-hard-feelings.jpeg', 'https://www.youtube.com/embed/7psP7xBEa28', 'No Hard Feelings', '2023', '06th October', '14+', '1h 43min', 'Romance', 'coming', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo felis tempor augue tristique, eget dignissim sapien ornare. Nullam vel hendrerit metus, a interdum risus. Etiam commodo lorem arcu, a tempus risus tempus sed. Proin ornare nec massa eget rhoncus. In rutrum aliquet dui, et placerat est molestie id.', false);
+
+INSERT INTO movies (id, titleimg, bgimg, previewimg, video, title, year, date, agelimit, length, category, type, description, active) VALUES
+(9, '../assets/movies/peter-pan-and-wendy-title.png', '../assets/movies/bg-peter-pan-and-wendy.jpeg', '../assets/movies/peter-pan-and-wendy.jpg', 'https://www.youtube.com/embed/9Ji5U2sTlLU', 'Peter Pan & Wendy', '2023', '14th October', '12+', '1h 49min', 'Adventure', 'coming', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo felis tempor augue tristique, eget dignissim sapien ornare. Nullam vel hendrerit metus, a interdum risus. Etiam commodo lorem arcu, a tempus risus tempus sed. Proin ornare nec massa eget rhoncus. In rutrum aliquet dui, et placerat est molestie id.', false);
+
+INSERT INTO movies (id, titleimg, bgimg, previewimg, video, title, year, date, agelimit, length, category, type, description, active) VALUES
+(10, '../assets/movies/heart-of-stone-title.png', '../assets/movies/bg-heart-of-stone.jpeg', '../assets/movies/heart-of-stone.jpg', 'https://www.youtube.com/embed/XuDwndGaCFo', 'Heart of Stone', '2023', '09th November', '15+', '2h 02min', 'Action', 'coming', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo felis tempor augue tristique, eget dignissim sapien ornare. Nullam vel hendrerit metus, a interdum risus. Etiam commodo lorem arcu, a tempus risus tempus sed. Proin ornare nec massa eget rhoncus. In rutrum aliquet dui, et placerat est molestie id.', false);
