@@ -1,0 +1,66 @@
+/* EditMovie.css */
+
+/* Container styling */
+.edit-movie-container {
+    max-width:max-content;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: azure;
+}
+
+/* Heading styling */
+.edit-movie-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #dc3545;
+}
+
+/* Form container styling */
+.edit-movie-form-container {
+    background-color: #f9f9f9;
+    padding:inherit;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form input styling */
+.edit-movie-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit button styling */
+.edit-movie-submit-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-movie-submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.edit-movie-alert {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.edit-movie-alert-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.edit-movie-alert-danger {
+    background-color: #dc3545;
+    color: #fff;
+}

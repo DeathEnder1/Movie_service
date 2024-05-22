@@ -30,12 +30,34 @@ import com.buncua.movies.service.MovieService;
 @RequestMapping("/movies")
 @CrossOrigin(origins = "http://localhost:3000")
 public class MovieController {
-    @Autowired
-    private MovieRepository MovieRepository;
+    // @Autowired
+    // private MovieRepository MovieRepository;
 
-    @GetMapping("")
+    // @GetMapping("")
+    // public List<Movie> getAllMovies() {
+    //     return MovieRepository.findAll();
+    // }
+    @Autowired
+    private MovieService movieService;
+    @GetMapping
     public List<Movie> getAllMovies() {
-        return MovieRepository.findAll();
+        return movieService.allMovies();
+    }
+    @GetMapping("/{id}")
+    public Optional<Movie> getMovieById(@PathVariable Long id) {
+        return movieService.getMovieById(id);
+    }
+    @PostMapping
+    public Movie addMovie(@RequestBody Movie movie) {
+        return movieService.addMovie(movie);
+    }
+    @PutMapping("/{id}")
+    public Movie updateMovie(@PathVariable Long id, @RequestBody Movie movieDetails) {
+        return movieService.updateMovie(id, movieDetails);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteMovie(@PathVariable Long id) {
+        movieService.deleteMovie(id);
     }
 }
 // @Controller
