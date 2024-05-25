@@ -19,8 +19,8 @@ function Banner() {
   };
 
   useEffect(()=>{
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   const handleSlideChange = id =>{
     const newMovies = movies.map(movie => {
