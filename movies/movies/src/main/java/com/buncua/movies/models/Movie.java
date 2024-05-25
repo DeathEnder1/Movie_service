@@ -172,4 +172,9 @@ public class Movie {
 
     @Column(name = "active", nullable = false)
     private Boolean active;
+
+    @Column(name = "video2", nullable = false)
+    private String video2;
+
+
 }

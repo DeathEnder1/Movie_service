@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,7 +40,7 @@ public class MovieController {
     // }
     @Autowired
     private MovieService movieService;
-    @GetMapping
+    @GetMapping("")
     public List<Movie> getAllMovies() {
         return movieService.allMovies();
     }
@@ -59,6 +60,11 @@ public class MovieController {
     public void deleteMovie(@PathVariable Long id) {
         movieService.deleteMovie(id);
     }
+    @GetMapping("/search/{title}")
+    public List<Movie> searchByTitle(@PathVariable String title) {
+        return movieService.searchByTitle(title);
+    }
+
 }
 // @Controller
 // public class MovieController {

@@ -7,6 +7,7 @@ import Banner from './pages/Banner';
 import MovieList from './components/MovieList';
 import AddMovie from './components/AddMovie';
 import EditMovie from './components/EditMovie';
+import GoogleDriveVideo from './pages/movie';
 
 import './App.css';
 
@@ -19,10 +20,13 @@ function App() {
             <Route path="/admin" element={<MovieList />} />
             <Route path="/add" element={<AddMovie />} />
             <Route path="/edit/:id" element={<EditMovie />} />
+            <Route path="/movies/:id" element={<GoogleDriveVideo />} />
           </Routes>
         </Router>
       </>
   );
 }
 
+
 export default App;
+
