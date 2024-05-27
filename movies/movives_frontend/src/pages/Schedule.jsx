@@ -48,9 +48,9 @@ function Schedule() {
         .catch(e=>console.log(e.message));
       };
     
-      useEffect(()=>{
-        fetchData();
-      }, []);
+    useEffect(()=>{
+      fetchData();
+    }, []);
 
     useEffect(()=>{
         setMovies(data);
