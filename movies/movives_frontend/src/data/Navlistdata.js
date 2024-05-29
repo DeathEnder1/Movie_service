@@ -7,7 +7,7 @@ const Navlistdata = [
     },
     {
         _id: 2,
-        link: '#',
+        link: '/',
         name: 'Home',
         active: true,
     },

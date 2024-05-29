@@ -2,9 +2,9 @@
   import './Card.css';
 
 
-  function Card({ movie, movieId, onPlayClick }) {
+  function Card({ movie, onPlayClick }) {
     const handlePlayClick = () => {
-      onPlayClick(movieId); // Chuyển id của phim cho component cha xử lý chuyển hướng
+        window.location.href = `/movies/${movie.id}`; // Chuyển id của phim cho component cha xử lý chuyển hướng
   };
 
       return (

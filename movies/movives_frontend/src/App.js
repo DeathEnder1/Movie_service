@@ -8,6 +8,7 @@ import MovieList from './components/MovieList';
 import AddMovie from './components/AddMovie';
 import EditMovie from './components/EditMovie';
 import GoogleDriveVideo from './pages/movie';
+import SearchResult from './pages/SearchResult';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -23,7 +24,8 @@ function App() {
             <Route path="/admin" element={<MovieList />} />
             <Route path="/add" element={<AddMovie />} />
             <Route path="/edit/:id" element={<EditMovie />} />
-            <Route path="/movies/:id" element={<GoogleDriveVideo />} />
+            <Route path="/movies/:id" element={<><Navbar /><GoogleDriveVideo /></>} />
+            <Route path="/search/:keyword" element={<><Navbar /><SearchResult /></>} />
           </Routes>
         </Router>
       </>
