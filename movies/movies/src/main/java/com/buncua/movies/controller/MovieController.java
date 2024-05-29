@@ -65,6 +65,26 @@ public class MovieController {
         return movieService.searchByTitle(title);
     }
 
+    @GetMapping("/category/{category}")
+    public List<Movie> getMoviesByCategory(@PathVariable String category) {
+    return movieService.getMoviesByCategory(category);
+    }
+
+    @GetMapping("/year/{year}")
+    public List<Movie> getMoviesByYear(@PathVariable int year) {
+    return movieService.getMoviesByYear(year);
+    }
+
+    @GetMapping("/genre/{genre}")
+    public List<Movie> searchMoviesByGenres(@RequestParam List<String> genres) {
+    return movieService.getMoviesByGenres(genres, genres.size());
+    }
+
+    @GetMapping("/category/{category}/year/{year}")
+    public List<Movie> getMoviesByCategoryAndYear(@PathVariable String category, @PathVariable int year) {
+    return movieService.getMoviesByCategoryAndYear(category, year);
+    }
+
 }
 // @Controller
 // public class MovieController {
