@@ -21,20 +21,20 @@ function App() {
         <Router>
           <Routes>
             <Route index element={<><Navbar /><Banner /></>} />     
-            <Route path="/admin" element={<MovieList />} />
             <Route path="/add" element={<AddMovie />} />
             <Route path="/edit/:id" element={<EditMovie />} />
-            {/* <Route exact path="/" element={<LoginPage />} />
+            <Route exact path="/" element={<LoginPage />} />
             <Route exact path="/login" element={<LoginPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             {UserService.adminOnly() && (
               <>
+                <Route path="/admin" element={<MovieList />} />
                 <Route path="/register" element={<RegistrationPage />} />
                 <Route path="/admin/user-management" element={<UserManagementPage />} />
                 <Route path="/update-user/:userId" element={<UpdateUser />} />
               </>
             )}
-            <Route path="*" element={<Navigate to="/login" />} />‰ */}
+            <Route path="*" element={<Navigate to="/login" />} />‰
           </Routes>
         </Router>
       </>
