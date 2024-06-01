@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <header>
         <a href='/' className='logo'>
-            Hentai.com
+            BunCua.com
         </a>
 
         <ul className='btn'>

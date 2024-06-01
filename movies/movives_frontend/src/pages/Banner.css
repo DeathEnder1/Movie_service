@@ -33,6 +33,16 @@
     padding-bottom: 100px;
 }
 
+.movie-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.movie-item .movie-item-data{
+    margin-left: 80px;
+    margin-top: 80px;
+}
+
 .bgImg{
     position: absolute;
     top: 0;
