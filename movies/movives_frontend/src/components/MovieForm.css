@@ -1,0 +1,70 @@
+.movie-form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    font-size: 1.2em; /* Increase the font size */
+
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center; /* Center horizontally */
+    width: 95%; /* Adjusted width for form rows */
+}
+
+input,
+textarea {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: calc(33.33% - 22px); /* Divide the width equally into three columns with some gap */
+    font-size: 1em; /* Adjust the input font size */
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+    width: calc(100% - 22px); /* Full width for textareas */
+    font-size: 1em; /* Adjust the textarea font size */
+}
+
+.submit-button,
+.cancel-button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px;
+    font-size: 1em; /* Adjust the button font size */
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.cancel-button {
+    border: 2px solid #dc3545;
+    background-color: #fff;
+    color: #dc3545;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.cancel-button:hover {
+    background-color: #dc3545;
+    color: #fff;
+}

@@ -26,7 +26,6 @@ section .movie-card p{
     font-size: 1.2rem;
     font-weight: 400;
     text-align: center;
-    padding: 10px 0;
 }
 
 section .movie-card .content{
