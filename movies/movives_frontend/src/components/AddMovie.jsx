@@ -14,7 +14,10 @@ const AddMovie = () => {
     return (
         <div className='edit-movie-container'>
             <h2 className='edit-movie-heading'>Add New Movie</h2>
-            <MovieForm onSubmit={handleAddMovie} />
+            <div className="edit-movie-form-container">
+                <MovieForm onSubmit={handleAddMovie} />
+            </div>
+            
         </div>
         
     );

@@ -124,7 +124,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "movie")
+@Table(name = "movies")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -158,9 +158,7 @@ public class Movie {
     @Column(name = "agelimit", nullable = false)
     private String agelimit;
 
-    @Column(name = "length", nullable = false)    // public List<Movie> getMoviesByCategoryAndYear(String category, int year) {
-        //     return movieRepository.findByCategoryAndYear(category, year);
-        // }
+    @Column(name = "length", nullable = false)   
     private String length;
 
     @Column(name = "category", nullable = false)
