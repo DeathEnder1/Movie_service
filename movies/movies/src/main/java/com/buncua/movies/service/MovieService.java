@@ -45,4 +45,23 @@ public class MovieService {
     public List<Movie> searchByTitle(String title) {
         return movieRepository.findByTitleContaining(title);
     }
+
+    public MovieService(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
+    }
+
+    public List<Movie> getMoviesByCategory(String category) {
+        return movieRepository.findByCategory(category);
+    }
+
+    public List<Movie> getMoviesByYear(int year) {
+        return movieRepository.findByYear(year);
+    }
+
+    public List<Movie> getMoviesByCategoryAndYear(String category, int year) {
+        return movieRepository.findByCategoryAndYear(category, year);
+    }
+    public List<Movie> getMoviesByGenres(List<String> genres, long size) {
+        return movieRepository.findByGenres(genres, size);
+    }
 }
