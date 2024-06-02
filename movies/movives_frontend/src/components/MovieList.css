@@ -1,5 +1,5 @@
 .admin-page{
-  background: #ffffff22;
+  background: #5e5d5d33;
 }
 
 .admin-header{
@@ -50,79 +50,57 @@
   cursor: pointer !important;
 }
 
-.movie-list{
-  padding-top: 250px;
-  padding-left: 30px;
+.admin-page {
+  padding: 20px;
+}
+
+.admin-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  height: 300px;
-  transform: translateX(0);
-  transition: all 1s ease-in-out;
+  margin-bottom: 20px;
 }
 
-.movie-item{
-  margin-right: 30px;
-  position: relative;
+.admin-button {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
 }
 
-.movie-item:hover .movie-item-img{
-  transform: scale(1.2);
-  margin: 0 30px;
-  opacity: 0.2s;
+.admin-title {
+  font-size: 24px;
 }
 
-.movie-item:hover .movie-item-title,
-.movie-item:hover .movie-item-actions .edit-button,
-.movie-item:hover .movie-item-actions .delete-button{
-  opacity: 1;
+.movie-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 100px;
 }
 
-.movie-item-img{
-  transition: all 0.15s ease-in-out;
-  width: 270px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-.movie-item-title{
-  padding: 0 10px;
-  font-size: 20px;
-  font-weight: bold;
-  position: absolute;
-  top: 10%;
-  left: 50px;
-  opacity: 0;
-  transition: 0.5s all ease-in-out;
-}
-
-.movie-item-actions .edit-button{
+.movie-table th,
+.movie-table td {
   padding: 10px;
-  background-color: #4dbf00;
-  color: white;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  bottom: 20px;
-  left: 50px;
-  opacity: 0;
-  transition: 0.5s all ease-in-out;
+  border: 1px solid #333;
 }
 
-.movie-item-actions .delete-button{
-  padding: 10px;
-  margin-left: 60px;
-  background-color: #4dbf00;
-  color: white;
-  border-radius: 10px;
-  outline: none;
-  border: none;
+.movie-poster {
+  width: 80px;
+  height: 120px;
+}
+
+.edit-button {
+  text-decoration: none;
+  color: blue;
+  margin-right: 10px;
+}
+
+.delete-button {
+  color: red;
   cursor: pointer;
-  position: absolute;
-  bottom: 20px;
-  left: 50px;
-  opacity: 0;
-  transition: 0.5s all ease-in-out;
+}
+
+.movie-row:hover {
+  background-color: #908f8f;
 }

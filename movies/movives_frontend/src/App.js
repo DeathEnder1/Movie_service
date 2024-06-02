@@ -9,8 +9,7 @@ import AddMovie from './components/AddMovie';
 import EditMovie from './components/EditMovie';
 import GoogleDriveVideo from './pages/movie';
 import SearchResult from './pages/SearchResult';
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import Year from './pages/Year';
 
 import './App.css';
 import Main from './pages/Main';
@@ -26,6 +25,7 @@ function App() {
             <Route path="/edit/:id" element={<EditMovie />} />
             <Route path="/movies/:id" element={<><Navbar /><GoogleDriveVideo /></>} />
             <Route path="/search/:keyword" element={<><Navbar /><SearchResult /></>} />
+            <Route path="/year/:year" element={<><Navbar /><Year /></>} />
           </Routes>
         </Router>
       </>

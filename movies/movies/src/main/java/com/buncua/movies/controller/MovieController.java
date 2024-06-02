@@ -1,13 +1,10 @@
 package com.buncua.movies.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,14 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 
 import com.buncua.movies.models.Movie;
-import com.buncua.movies.repository.MovieRepository;
 import com.buncua.movies.service.MovieService;
-// import org.springframework.web.bind.annotation.RequestMethod;
-// import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/movies")
@@ -63,6 +56,26 @@ public class MovieController {
     @GetMapping("/search/{title}")
     public List<Movie> searchByTitle(@PathVariable String title) {
         return movieService.searchByTitle(title);
+    }
+
+    @GetMapping("/category/{category}")
+    public List<Movie> getMoviesByCategory(@PathVariable String category) {
+    return movieService.getMoviesByCategory(category);
+    }
+
+    @GetMapping("/year/{year}")
+    public List<Movie> getMoviesByYear(@PathVariable int year) {
+    return movieService.getMoviesByYear(year);
+    }
+
+    @GetMapping("/genre/{genre}")
+    public List<Movie> searchMoviesByGenres(@RequestParam List<String> genres) {
+    return movieService.getMoviesByGenres(genres, genres.size());
+    }
+
+    @GetMapping("/category/{category}/year/{year}")
+    public List<Movie> getMoviesByCategoryAndYear(@PathVariable String category, @PathVariable int year) {
+    return movieService.getMoviesByCategoryAndYear(category, year);
     }
 
 }

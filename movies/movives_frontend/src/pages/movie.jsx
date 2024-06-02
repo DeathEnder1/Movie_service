@@ -30,7 +30,7 @@ const GoogleDriveVideo = ({ match }) => {
     const frontendURL = movie ? `/movies/${movie.title.replace(/\s+/g, '-')}` : '';
 
     return (
-        <div style={{ backgroundColor: 'white' }}>
+        <div style={{ backgroundColor: 'white' , padding:'100px'}}>
         {movie ? (
             <div>
             <h2>{movie.title}</h2>
