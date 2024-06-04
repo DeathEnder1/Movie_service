@@ -5,6 +5,7 @@ import java.util.Optional;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,13 +25,6 @@ import com.buncua.movies.service.MovieService;
 @RequestMapping("/movies")
 @CrossOrigin(origins = "http://localhost:3000")
 public class MovieController {
-    // @Autowired
-    // private MovieRepository MovieRepository;
-
-    // @GetMapping("")
-    // public List<Movie> getAllMovies() {
-    //     return MovieRepository.findAll();
-    // }
     @Autowired
     private MovieService movieService;
     @GetMapping("")
@@ -41,14 +35,20 @@ public class MovieController {
     public Optional<Movie> getMovieById(@PathVariable Long id) {
         return movieService.getMovieById(id);
     }
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public Movie addMovie(@RequestBody Movie movie) {
         return movieService.addMovie(movie);
     }
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public Movie updateMovie(@PathVariable Long id, @RequestBody Movie movieDetails) {
         return movieService.updateMovie(id, movieDetails);
     }
+
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public void deleteMovie(@PathVariable Long id) {
         movieService.deleteMovie(id);
@@ -79,25 +79,3 @@ public class MovieController {
     }
 
 }
-// @Controller
-// public class MovieController {
-
-//     @Autowired
-//     private MovieService movieService;
-
-//     @GetMapping("/movies")
-//     public String getAllMovies(Model model) {
-//         List<Movie> movies = movieService.allMovies();
-//         // Initialize lists to avoid null pointers
-//         for (Movie movie : movies) {
-//             if (movie.getGenres() == null) {
-//                 movie.setGenres(new ArrayList<>());
-//             }
-//             if (movie.getBackdrops_link() == null) {
-//                 movie.setBackdrops_link(new ArrayList<>());
-//             }
-//         }
-//         model.addAttribute("movies", movies);
-//         return "movies";
-//     }
-//     }

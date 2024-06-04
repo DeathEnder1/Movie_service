@@ -6,9 +6,12 @@ import './EditMovie.css';
 
 
 const AddMovie = () => {
+
+    const navigate = useNavigate();
     const handleAddMovie = async (movie) => {
         await axios.post('http://localhost:8080/movies', movie);
         alert('Movie added successfully');
+        navigate('/movieslist');
     };
 
     return (
