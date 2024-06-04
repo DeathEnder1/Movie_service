@@ -14,13 +14,13 @@ function Banner() {
   const fetchData = () => {
     fetch('http://localhost:8080/movies')
     .then(res=>res.json())
-    .then(data => setMovies(data))
+    .then(data => {setMovies(data)})
     .catch(e=>console.log(e.message));
   };
 
   useEffect(()=>{
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   const handleSlideChange = id =>{
     const newMovies = movies.map(movie => {

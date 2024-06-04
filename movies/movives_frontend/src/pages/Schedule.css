@@ -1,0 +1,40 @@
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.mt-5 {
+    margin-top: 5rem; 
+}
+
+.schedule .filters{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.schedule .filters li{
+    color: #fff;
+    padding: 10px 25px;
+    background: #191919;
+    transition: 0.3s;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.schedule .filters li:hover,
+.schedule .filters li.active{
+    background: var(--color-primary);
+}
