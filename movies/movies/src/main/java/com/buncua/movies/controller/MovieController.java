@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,14 +48,17 @@ public class MovieController {
     public Optional<Movie> getMovieById(@PathVariable Long id) {
         return movieService.getMovieById(id);
     }
+
     @PostMapping
     public Movie addMovie(@RequestBody Movie movie) {
         return movieService.addMovie(movie);
     }
+
     @PutMapping("/{id}")
     public Movie updateMovie(@PathVariable Long id, @RequestBody Movie movieDetails) {
         return movieService.updateMovie(id, movieDetails);
     }
+
     @DeleteMapping("/{id}")
     public void deleteMovie(@PathVariable Long id) {
         movieService.deleteMovie(id);
