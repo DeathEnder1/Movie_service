@@ -7,28 +7,22 @@ const Navlistdata = [
     },
     {
         _id: 2,
-        link: '#',
+        link: '/',
         name: 'Home',
         active: true,
     },
     {
         _id: 3,
         link: '#button1',
-        name: 'Schedule',
+        name: 'Category',
         active: true,
     },
     {
         _id: 4,
         link: '#button2',
-        name: 'Trend',
+        name: 'Year',
         active: true,
     },
-    {
-        _id: 5,
-        link: '#button3',
-        name: 'Blog',
-        active: true,
-    }
     
 ];
 

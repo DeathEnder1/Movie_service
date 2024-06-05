@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import 'swiper/css';
+
+
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Navbar from './pages/Navbar';
 import Banner from './pages/Banner';
 import MovieList from './components/MovieList';
 import AddMovie from './components/AddMovie';
 import EditMovie from './components/EditMovie';
-import "bootstrap/dist/css/bootstrap.min.css";
+import GoogleDriveVideo from './pages/movie';
+import SearchResult from './pages/SearchResult';
+import Year from './pages/Year';
+
 
 import './App.css';
-
+import Main from './pages/Main';
 import AuthService from "./services/auth.service";
 import BoardAdmin from "./components/board-admin.component";
 import BoardModerator from "./components/board-moderator.component";
@@ -138,8 +142,11 @@ class App extends Component {
               <Route path="/register" element={<Register />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/user" element={<BoardUser />} />
+              <Route path="/movies/:id" element={<><Navbar /><GoogleDriveVideo /></>} />
               <Route path="/mod" element={<BoardModerator />} />
               <Route path="/admin" element={<BoardAdmin />} />
+              <Route path="/search/:keyword" element={<><Navbar /><SearchResult /></>} />
+              <Route path="/year/:year" element={<><Navbar /><Year /></>} />
             </Routes>
       </div>
       {/* <AuthVerify logOut={this.logOut}/> */}
@@ -148,4 +155,6 @@ class App extends Component {
   }
 }
 
+
 export default App;
+

@@ -4,6 +4,9 @@ import MovieForm from './MovieForm';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import MovieService from '../services/MovieService';
 
+import './MovieForm.css';
+import './EditMovie.css';
+
 const AddMovie = () => {
 
     const [title, setTitle] = useState('')
@@ -75,6 +78,7 @@ const AddMovie = () => {
                 <Link to="/movieslist" className="btn btn-danger"> Cancel </Link>
             </form>
         </div>
+        
     );
 };
 
