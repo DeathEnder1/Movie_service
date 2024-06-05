@@ -11,13 +11,6 @@ const Navlistdata = [
         name: 'Category',
         active: true,
     },
-    {
-        _id: 3,
-        link: '#button2',
-        name: 'Year',
-        active: true,
-    },
-    
 ];
 
 export default Navlistdata;

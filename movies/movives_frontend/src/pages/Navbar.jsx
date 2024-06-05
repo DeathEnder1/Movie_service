@@ -4,6 +4,7 @@ import Navlistdata from '../data/Navlistdata';
 import Search from '../components/Search';
 
 
+
 import './Navbar.css';
 import Button from '../components/Button';
 
@@ -23,6 +24,19 @@ function Navbar() {
     const [currentUser, setCurrentUser] = useState(undefined);
     const [dropdownOpen, setDropdownOpen] = useState(false); // Quản lý trạng thái dropdown
     
+    const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
+    const [selectedYear, setSelectedYear] = useState(null);
+
+    const toggleYearDropdown = () => {
+      setYearDropdownOpen(!yearDropdownOpen);
+    };
+    
+    const selectYear = (year) => {
+      setSelectedYear(year);
+      setYearDropdownOpen(false); // Đóng dropdown sau khi chọn
+    };
+    
+
     useEffect(() => {
       const user = AuthService.getCurrentUser();
   
@@ -50,10 +64,13 @@ function Navbar() {
       setDropdownOpen(!dropdownOpen);
     };
 
+    const categories = ["Action", "Comedy", "Drama", "Horror", "Sci-Fi"];
+    const years = [2021, 2022, 2023, 2024, 2025];
+    
   return (
     <header>
         <a href='/' className='logo'>
-            Hentai.com
+            Bún cua.com
         </a>
 
         <ul className='btn'>
@@ -71,6 +88,22 @@ function Navbar() {
               </Link>
             </li>
           )}
+
+<li className="nav-item dropdown">
+  <li className="nav-link" onClick={toggleYearDropdown} style={{ cursor: 'pointer' }}>
+    <a>Year</a>
+  </li>
+  <ul className={`dropdown-menu ${yearDropdownOpen ? 'show' : ''}`}>
+    {years.map(year => (
+      <li key={year} onClick={() => selectYear(year)}>
+        <Link to={`/year/${year}`} className="dropdown-item">
+          {year}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</li>
+
 
           {showAdminBoard && (
             <li className="nav-item dropdown">
@@ -108,8 +141,12 @@ function Navbar() {
 
         </div>
 
+        </ul>
+
+        <Search />
+        
         {currentUser ? (
-          <div className="navbar-nav ml-auto">
+          <div className="Navbar-login">
             <li className="nav-item">
               <Link to={"/profile"} className="nav-link">
                 {currentUser.username}
@@ -117,29 +154,26 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <a href="/login" className="nav-link" onClick={logOut}>
-                LogOut
+                <Button icon={<ion-icon name="log-out-outline"></ion-icon>} name='Log out'/>
               </a>
             </li>
           </div>
         ) : (
-          <div className="navbar-nav ml-auto">
+          <div className="Navbar-login">
             <li className="nav-item">
-              <Link to={"/login"} className="nav-link">
-                Login
+              <Link to={"/login"} className="nav-btn">
+                <Button icon={<ion-icon name="log-in-outline"></ion-icon>} name='Log in'/>
               </Link>
             </li>
+            
             <li className="nav-item">
-              <Link to={"/register"} className="nav-link">
-                Sign Up
+              <Link to={"/register"} className="nav-btn">
+                <Button name='Sign up'/>
               </Link>
             </li>
           </div>
         )}
-        </ul>
-
-        <Search />
         
-        <Button icon={<ion-icon name="log-in-outline"></ion-icon>} name='Sign in'/>
     </header>
   )
 }

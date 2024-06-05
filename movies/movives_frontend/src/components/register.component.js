@@ -4,7 +4,10 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 
+import { Link } from 'react-router-dom';
+
 import AuthService from "../services/auth.service";
+import "./register_component.css"
 
 const required = value => {
   if (!value) {
@@ -123,12 +126,20 @@ export default class Register extends Component {
   render() {
     return (
       <div className="col-md-12">
+
+        <div className="signup-header">
+          <Link to="/" className="signup-button"><ion-icon name="home-outline"></ion-icon></Link>
+          <h2 className="signup-title">Sign up</h2>
+          <Link to="/register" className="signup-button">Log in</Link>
+        </div>
+
+
         <div className="card card-container">
-          <img
+          {/* <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
             className="profile-img-card"
-          />
+          /> */}
 
           <Form
             onSubmit={this.handleRegister}

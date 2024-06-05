@@ -1,0 +1,22 @@
+.signup-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+    transition: 0.5s;
+    z-index: 10000;
+  }
+  
+  .signup-title{
+    font-family: 'Racing Sans One', cursive;
+    color: #fff;
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+  }

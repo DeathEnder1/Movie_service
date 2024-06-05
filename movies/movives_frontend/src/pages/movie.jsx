@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
+import "./movie.css";
+
 const GoogleDriveVideo = ({ match }) => {
     const [movie, setMovie] = useState(null);
     const { id } = useParams();
@@ -30,18 +32,38 @@ const GoogleDriveVideo = ({ match }) => {
     const frontendURL = movie ? `/movies/${movie.title.replace(/\s+/g, '-')}` : '';
 
     return (
-        <div style={{ backgroundColor: 'white' , padding:'100px'}}>
+        <div style={{ backgroundColor: '#011' , padding:'100px',width: '70%', margin: '0 auto'}}>
         {movie ? (
-            <div>
-            <h2>{movie.title}</h2>
+            <div className='container'>
+                <div className='movie-content'>
+                    <div className='left-content'>
+                        <img src={movie.previewimg} alt="Movie Title" className="movie-title" />
+                    </div>
+
+                    <div className='right-content'>
+                        <img src={movie.titleimg} alt="Movie Title" className="movie-title" />
+                        <h2 style={{padding:'10px'}}>{movie.title}</h2>
+                        {movie.genres ? (
+                            <p>Thể loại: {movie.genres.map((genre, index) => (
+                                index === 0 ? genre : `, ${genre}`
+                            ))}</p>
+                        ) : null}
+                        <p>Thời lượng: {movie.length}</p>
+                    </div>
+                </div>
+                
+                <div className="description">
+                    <h2 className='title'>DESCRIPTION</h2>
+                    <p>{movie.description}</p>
+                </div>                
             </div>
         ) : (
             <p>Loading...</p>
         )}
-        <p>Frontend URL: {frontendURL}</p>
+        {/* <p>Frontend URL: {frontendURL}</p> */}
         <iframe
             title="Google Drive Video"
-            width="1100"
+            width="1140"
             height="600"
             src ={embeddableLink}
             allow="autoplay; fullsreen"

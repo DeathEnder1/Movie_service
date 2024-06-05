@@ -11,8 +11,7 @@ import EditMovie from './components/EditMovie';
 import GoogleDriveVideo from './pages/movie';
 import SearchResult from './pages/SearchResult';
 import Year from './pages/Year';
-// import Main from './pages/Main';
-
+import Main from './pages/Main';
 
 import AuthService from "./services/auth.service";
 import BoardAdmin from "./components/board-admin.component";
@@ -72,7 +71,7 @@ class App extends Component {
 
       <div className="container mt-3">
             <Routes> 
-              <Route index element={<><Navbar /><Banner /></>} />
+              <Route index element={<><Navbar /><Banner /><Main /></>} />
 
               <Route path="/movieslist" element={<MovieList />} />  
               <Route path="/add" element={<AddMovie />} />

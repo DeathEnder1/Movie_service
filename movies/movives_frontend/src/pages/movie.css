@@ -1,0 +1,31 @@
+.container {
+    padding-bottom: 100px;
+}
+
+.movie-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    padding: 10px;
+    background-color: #494747;
+}
+
+.right-content {
+    color: #fff;
+}
+
+.description {
+    color: aliceblue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.description .title{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
