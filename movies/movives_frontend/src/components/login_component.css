@@ -87,3 +87,13 @@ input[type="password"] {
   text-transform: uppercase;
 }
 
+form {
+  max-width: 500px;
+  width: 100%; 
+  padding: 50px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 100px auto 0; /* Adjust margin to create space below the nav bar and center the form horizontally */
+}
