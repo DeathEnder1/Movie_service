@@ -5,6 +5,7 @@ import MovieData from '../components/MovieData';
 import PlayBtn from '../components/PlayBtn';
 import MovieSwiper from '../components/MovieSwiper';
 
+
 import './Banner.css';
 
 function Banner() {
@@ -13,35 +14,40 @@ function Banner() {
   const fetchData = () => {
     fetch('http://localhost:8080/movies')
     .then(res=>res.json())
-    .then(data => setMovies(data))
+    .then(data => {setMovies(data)})
     .catch(e=>console.log(e.message));
   };
 
   useEffect(()=>{
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   const handleSlideChange = id =>{
-    console.log(id);
-  }
+    const newMovies = movies.map(movie => {
+      movie.active = false;
+      if(movie._id === id){
+        movie.active = true;
+      }
+      return movie;
+    });
+    setMovies(newMovies);
+  };
 
   return (
     <div className="Banner">
       {
         movies && movies.length>0 && movies.map(movie=>(
           <div className="movie">
-            <img src={movie.bgimg} alt="Background Image" className={`bgImg ${movie.active ? 'active' : undefined}`} />
-            <div className="container-fuild">
-              <div className="row">
-                {/* Content movie is here */}
-                <div className="col-lg-6 col-md-12">
-                  <MovieContent movie={movie}/>
-                </div>
-                {/* Data movie is here */}
-                <div className="col-lg-6 col-md-12">
-                  <MovieData movie={movie}/>
-                  <PlayBtn movie={movie}/>
-                </div>
+            <img src={movie.bgimg} alt="Background_Image" className={`bgImg ${movie.active ? 'active' : undefined}`} />
+            <div className="movie-item">
+              {/* Content movie is here */}
+              <div className="movie-item-content">
+                <MovieContent movie={movie}/>
+              </div>
+              {/* Data movie is here */}
+              <div className="movie-item-data">
+                <MovieData movie={movie}/>
+                <PlayBtn movie={movie}/>
               </div>
             </div>
           </div>

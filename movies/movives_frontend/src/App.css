@@ -12,11 +12,11 @@
     --color-red: #b12f1b;
 }
 
-body{
+body {
     background: #000;
     font-family: 'Roboto', sans-serif;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     display: none;
 }

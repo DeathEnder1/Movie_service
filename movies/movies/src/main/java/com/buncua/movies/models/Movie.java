@@ -120,8 +120,10 @@ package com.buncua.movies.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.*;
+
 import java.util.List;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "movies")
@@ -150,7 +152,7 @@ public class Movie {
     private String title;
 
     @Column(name = "year", nullable = false)
-    private String year;
+    private int year;
 
     @Column(name = "date", nullable = false)
     private String date;
@@ -158,7 +160,7 @@ public class Movie {
     @Column(name = "agelimit", nullable = false)
     private String agelimit;
 
-    @Column(name = "length", nullable = false)
+    @Column(name = "length", nullable = false)   
     private String length;
 
     @Column(name = "category", nullable = false)
@@ -171,5 +173,14 @@ public class Movie {
     private String description;
 
     @Column(name = "active", nullable = false)
-    private Boolean active;
+    private int active;
+
+    @Column(name = "video2", nullable = false)
+    private String video2;
+    
+    @ElementCollection
+    @CollectionTable(name = "movie_genres", joinColumns = @JoinColumn(name = "movieid"))
+    @Column(name = "genre")
+    private List<String> genres;
+
 }
