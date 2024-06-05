@@ -173,7 +173,7 @@ public class Movie {
     private String description;
 
     @Column(name = "active", nullable = false)
-    private Boolean active;
+    private int active;
 
     @Column(name = "video2", nullable = false)
     private String video2;
