@@ -36,6 +36,7 @@ public class MovieService {
         movie.setType(movieDetails.getType());
         movie.setDescription(movieDetails.getDescription());
         movie.setVideo2(movieDetails.getVideo2());
+        movie.setGenres(movieDetails.getGenres());
         return movieRepository.save(movie);
     }
     public void deleteMovie(Long id) {
