@@ -25,12 +25,14 @@ const MovieList = () => {
   };
 
   const handleDelete = async (id) => {
-    try {
-      await MovieService.deleteMovie(id);
-      fetchMovies();
-  } catch (error) {
-      console.error("There was an error deleting the movie!", error);
-  }
+    if (window.confirm("Are you sure you want to delete this movie?")) {
+        try {
+            await MovieService.deleteMovie(id);
+            fetchMovies();
+        } catch (error) {
+            console.error("There was an error deleting the movie!", error);
+        }
+    }
 };
 
   return (

@@ -5,16 +5,20 @@
     flex-direction: column;
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     overflow-y: auto;
     font-size: 1.2em; /* Increase the font size */
+    border: 2px solid #ccc; /* Border styling */
+    border-radius: 10px; /* Rounded corners */
+    background-color: grey;
 
 }
 
+
 .form-row {
     display: flex;
-    flex-wrap: wrap;
+    grid-template-columns: max-content 1fr;
     gap: 10px;
     align-items: center; /* Center horizontally */
     width: 95%; /* Adjusted width for form rows */
@@ -28,7 +32,7 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    width: calc(33.33% - 22px); /* Divide the width equally into three columns with some gap */
+    width: calc(100% - 22px); /* Set a fixed width for input elements */
     font-size: 1em; /* Adjust the input font size */
 }
 
