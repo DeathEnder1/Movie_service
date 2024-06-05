@@ -37,20 +37,17 @@ public class MovieController {
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/admin")
     public Movie addMovie(@RequestBody Movie movie) {
         return movieService.addMovie(movie);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/admin/{id}")
     public Movie updateMovie(@PathVariable Long id, @RequestBody Movie movieDetails) {
         return movieService.updateMovie(id, movieDetails);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/admin/{id}")
     public void deleteMovie(@PathVariable Long id) {
