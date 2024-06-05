@@ -68,4 +68,12 @@ header.scrolled{
 .dropdown-item:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+.Navbar-login {
+    display: flex;
+}
+
+.Navbar-login .nav-item {
+    list-style: none;
+}
   
