@@ -62,6 +62,7 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
         .authorizeHttpRequests(auth -> 
           auth.requestMatchers("/movies/auth/**").permitAll()
               .requestMatchers("/movies/test/**").permitAll()
+              .requestMatchers("/movies/admin/**").permitAll()
               .requestMatchers("/movies/**").permitAll()
               .anyRequest().authenticated()
         );
