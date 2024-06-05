@@ -74,9 +74,9 @@ function Navbar() {
 
           {showAdminBoard && (
             <li className="nav-item dropdown">
-              <span className="nav-link" onClick={toggleDropdown} style={{ cursor: 'pointer' }}>
-                Manage
-              </span>
+              <li className="nav-link" onClick={toggleDropdown} style={{ cursor: 'pointer' }}>
+                <a>Manage</a>
+              </li>
               <ul className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
                 <li>
                   <Link to={"/admin"} className="dropdown-item">
@@ -93,17 +93,19 @@ function Navbar() {
                     View Profile
                   </Link>
                 </li>
+
+                {currentUser && (
+                  <li>
+                    <Link to={"/user"} className="dropdown-item">
+                    User
+                    </Link>
+                  </li>
+                )}
               </ul>
             </li>
           )}
 
-          {currentUser && (
-            <li className="nav-item">
-              <Link to={"/user"} className="nav-link">
-                User
-              </Link>
-            </li>
-          )}
+
         </div>
 
         {currentUser ? (
