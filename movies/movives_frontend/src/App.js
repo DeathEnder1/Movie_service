@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import 'swiper/css';
+import './App.css';
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Navbar from './pages/Navbar';
@@ -10,10 +11,9 @@ import EditMovie from './components/EditMovie';
 import GoogleDriveVideo from './pages/movie';
 import SearchResult from './pages/SearchResult';
 import Year from './pages/Year';
+// import Main from './pages/Main';
 
 
-import './App.css';
-import Main from './pages/Main';
 import AuthService from "./services/auth.service";
 import BoardAdmin from "./components/board-admin.component";
 import BoardModerator from "./components/board-moderator.component";
@@ -65,86 +65,29 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser,showModeratorBoard, showAdminBoard } = this.state;
+
     return (  
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <div className="navbar-nav mr-auto">
-            
-            {showModeratorBoard && (
-              <li className="nav-item">
-                <Link to={"/mod"} className="nav-link">
-                  Moderator Board
-                </Link>
-              </li>
-            )}
 
-            {showAdminBoard && (
-              <li>
-                <Link to={"/admin"} >
-                  Admin Board
-                </Link>
-                <Link to={"/movieslist"} >
-                  MovieList
-                </Link>
-                <Link to={"/profile"} >
-                  View Profile
-                </Link>
-              </li>
-            )}
-
-            {currentUser && (
-              <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
-                  User
-                </Link>
-              </li>
-            )}
-          </div>
-
-          {currentUser ? (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
-                  {currentUser.username}
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a href="/login" className="nav-link" onClick={this.logOut}>
-                  LogOut
-                </a>
-              </li>
-            </div>
-          ) : (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/login"} className="nav-link">
-                  Login
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link to={"/register"} className="nav-link">
-                  Sign Up
-                </Link>
-              </li>
-            </div>
-          )}
-        </nav>
 
       <div className="container mt-3">
             <Routes> 
               <Route index element={<><Navbar /><Banner /></>} />
-              <Route path="/movieslist" element={<MovieList />} />
+
+              <Route path="/movieslist" element={<MovieList />} />  
               <Route path="/add" element={<AddMovie />} />
               <Route path="/edit/:id" element={<EditMovie />} />
+              <Route path="/admin" element={<BoardAdmin />} />
+
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+
               <Route path="/profile" element={<Profile />} />
               <Route path="/user" element={<BoardUser />} />
+
               <Route path="/movies/:id" element={<><Navbar /><GoogleDriveVideo /></>} />
               <Route path="/mod" element={<BoardModerator />} />
-              <Route path="/admin" element={<BoardAdmin />} />
+
               <Route path="/search/:keyword" element={<><Navbar /><SearchResult /></>} />
               <Route path="/year/:year" element={<><Navbar /><Year /></>} />
             </Routes>
