@@ -52,7 +52,7 @@ const AddMovie = () => {
                 </div>
                 <div>
                     <label>Date</label>
-                    <input type="number" value={date} onChange={(e) => setDate(e.target.value)} />
+                    <input type="text" value={date} onChange={(e) => setDate(e.target.value)} />
                 </div>
                 <div>
                     <label>AgeLimit</label>
@@ -60,7 +60,7 @@ const AddMovie = () => {
                 </div>
                 <div>
                     <label>Length</label>
-                    <input type="number" value={length} onChange={(e) => setLength(e.target.value)} />
+                    <input type="text" value={length} onChange={(e) => setLength(e.target.value)} />
                 </div>
                 <div>
                     <label>Category</label>
