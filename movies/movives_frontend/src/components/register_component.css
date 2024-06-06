@@ -20,3 +20,28 @@
     text-decoration: none;
     text-transform: uppercase;
   }
+
+.signup-button{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 15px;
+  background: var(--color-red);
+  color: #fff;
+  padding: 5px 16px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  cursor: pointer !important;
+  border: none;
+}
+
+.signup-button:hover{
+  color: var(--color-red) !important;
+  background: #fff !important;
+  cursor: pointer !important;
+}
