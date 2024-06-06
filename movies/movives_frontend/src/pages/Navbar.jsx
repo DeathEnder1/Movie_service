@@ -3,8 +3,6 @@ import Navlistitem from '../components/Navlistitem';
 import Navlistdata from '../data/Navlistdata';
 import Search from '../components/Search';
 
-
-
 import './Navbar.css';
 import Button from '../components/Button';
 
@@ -35,7 +33,18 @@ function Navbar() {
       setSelectedYear(year);
       setYearDropdownOpen(false); // Đóng dropdown sau khi chọn
     };
+
+    const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState(null);
     
+    const toggleCategoryDropdown = () => {
+      setCategoryDropdownOpen(!categoryDropdownOpen);
+    };
+    
+    const selectCategory = (category) => {
+      setSelectedCategory(category);
+      setCategoryDropdownOpen(false); // Đóng dropdown sau khi chọn
+    };
 
     useEffect(() => {
       const user = AuthService.getCurrentUser();
@@ -88,10 +97,26 @@ function Navbar() {
                 </Link>
               </li>
             )}
+
+
+          <li className="nav-item dropdown">
+            <li className="nav-link" onClick={toggleCategoryDropdown} style={{ cursor: 'pointer' }}>
+              <a>Category <ion-icon name="chevron-down-outline"></ion-icon></a>
+            </li>
+            <ul className={`dropdown-menu ${categoryDropdownOpen ? 'show' : ''}`}>
+              {categories.map(category => (
+                <li key={category} onClick={() => selectCategory(category)}>
+                  <Link to={`/category/${category}`} className="dropdown-item">
+                    {category}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
             
           <li className="nav-item dropdown">
             <li className="nav-link" onClick={toggleYearDropdown} style={{ cursor: 'pointer' }}>
-              <a>Year</a>
+              <a>Year <ion-icon name="chevron-down-outline"></ion-icon></a>
             </li>
             <ul className={`dropdown-menu ${yearDropdownOpen ? 'show' : ''}`}>
               {years.map(year => (
@@ -102,13 +127,12 @@ function Navbar() {
                 </li>
               ))}
             </ul>
-          </li>
-      
+          </li>      
 
           {showAdminBoard && (
             <li className="nav-item dropdown">
               <li className="nav-link" onClick={toggleDropdown} style={{ cursor: 'pointer' }}>
-                <a>Manage</a>
+                <a>Manage <ion-icon name="chevron-down-outline"></ion-icon></a>
               </li>
               <ul className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
                 <li>

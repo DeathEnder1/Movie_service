@@ -32,6 +32,10 @@ header.scrolled{
     display: flex;
 }
 
+.navbar-nav{
+    display: flex;
+}
+
 .nav-item.dropdown {
     position: relative;
 }
@@ -85,6 +89,12 @@ header.scrolled{
     border: 1px solid #333;
     border-radius: 5px;
     background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+.user-nav .nav-link{
+    display: inline-block;
+    color: #333;
     text-decoration: none;
 }
 

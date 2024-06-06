@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
 import AuthService from "../services/auth.service";
+import { Link } from 'react-router-dom';
+import "../components/profile_components.css"
 
 export default class Profile extends Component {
   constructor(props) {
@@ -27,31 +29,39 @@ export default class Profile extends Component {
 
     const { currentUser } = this.state;
 
-    return (
-      <div className="container">
-        {(this.state.userReady) ?
-        <div>
+    return ( 
+      <div>
+        <div className="profile-header">
+          <Link to="/" className="profile-button"><ion-icon name="home-outline"></ion-icon></Link>
+          <h2 className="profile-title" style={{color:"white"}}>Profile</h2>
+          <Link to="/login" className="profile-button">Logout</Link>
+        </div>
 
-        <p>
-          <strong>Token:</strong>{" "}
-          {currentUser.accessToken.substring(0, 20)} ...{" "}
-          {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
-        </p>
-        <p>
-          <strong>Id:</strong>{" "}
-          {currentUser.id}
-        </p>
-        <p>
-          <strong>Email:</strong>{" "}
-          {currentUser.email}
-        </p>
-        <strong>Authorities:</strong>
-        <ul>
-          {currentUser.roles &&
-            currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
-        </ul>
-      </div>: null}
+        <div className="profile-container">
+          {this.state.userReady ? (
+            <div className="user-info">
+              {/* <p>
+                <strong>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}
+                {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
+              </p> */}
+              <p>
+                <strong>Id:</strong> {currentUser.id}
+              </p>
+              <p>
+                <strong>Email:</strong> {currentUser.email}
+              </p>
+              <strong>Authorities:</strong>
+              <ul>
+                {currentUser.roles &&
+                  currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
+              </ul>
+            </div>
+          ) : null}
+        </div>
+
+
       </div>
+
     );
   }
 }
