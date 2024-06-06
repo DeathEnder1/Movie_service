@@ -68,7 +68,7 @@ const EditMovie = () => {
             <div className='edit-movie-heading'>
                 <h2>Edit Movie</h2>
             </div>
-            <div className="edit-movie-form-container">
+            <div>
                 <form className="movie-form">
                 <div className="form-row">
                     <label>Title</label>

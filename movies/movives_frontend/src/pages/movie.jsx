@@ -44,11 +44,11 @@ const GoogleDriveVideo = ({ match }) => {
                         <img src={movie.titleimg} alt="Movie Title" className="movie-title" />
                         <h2 style={{padding:'10px'}}>{movie.title}</h2>
                         {movie.genres ? (
-                            <p>Thể loại: {movie.genres.map((genre, index) => (
+                            <p>Genres: {movie.genres.map((genre, index) => (
                                 index === 0 ? genre : `, ${genre}`
                             ))}</p>
                         ) : null}
-                        <p>Thời lượng: {movie.length}</p>
+                        <p>Length: {movie.length}</p>
                     </div>
                 </div>
                 

@@ -1,8 +1,9 @@
 .movie-form {
-    width: 100vw;
+    width: 100vh;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    max-width:1000vh;
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
     padding: 10px;

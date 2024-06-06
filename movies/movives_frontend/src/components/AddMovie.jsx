@@ -57,8 +57,8 @@ const AddMovie = () => {
             <div className='edit-movie-heading'>
                 <h2>Add Movie</h2>
             </div>
-            
-            <form className="movie-form">
+            <div>
+                <form className="movie-form">
             <div className="form-row">
                     <label>Title</label>
                     <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -120,6 +120,8 @@ const AddMovie = () => {
                     </Link>
                 </div>
             </form>
+            </div>
+            
         </div>
     );
 };

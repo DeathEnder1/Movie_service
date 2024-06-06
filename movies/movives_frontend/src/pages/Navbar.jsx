@@ -80,30 +80,30 @@ function Navbar() {
                 ))
             }
 
-        <div className="navbar-nav mr-auto">
-          {showModeratorBoard && (
-            <li className="nav-item">
-              <Link to={"/mod"} className="nav-link">
-                Moderator Board
-              </Link>
+          <div className="navbar-nav mr-auto">
+            {showModeratorBoard && (
+              <li className="nav-item">
+                <Link to={"/mod"} className="nav-link">
+                  Moderator Board
+                </Link>
+              </li>
+            )}
+            
+          <li className="nav-item dropdown">
+            <li className="nav-link" onClick={toggleYearDropdown} style={{ cursor: 'pointer' }}>
+              <a>Year</a>
             </li>
-          )}
-
-<li className="nav-item dropdown">
-  <li className="nav-link" onClick={toggleYearDropdown} style={{ cursor: 'pointer' }}>
-    <a>Year</a>
-  </li>
-  <ul className={`dropdown-menu ${yearDropdownOpen ? 'show' : ''}`}>
-    {years.map(year => (
-      <li key={year} onClick={() => selectYear(year)}>
-        <Link to={`/year/${year}`} className="dropdown-item">
-          {year}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</li>
-
+            <ul className={`dropdown-menu ${yearDropdownOpen ? 'show' : ''}`}>
+              {years.map(year => (
+                <li key={year} onClick={() => selectYear(year)}>
+                  <Link to={`/year/${year}`} className="dropdown-item">
+                    {year}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+      
 
           {showAdminBoard && (
             <li className="nav-item dropdown">
@@ -139,7 +139,7 @@ function Navbar() {
           )}
 
 
-        </div>
+          </div>
 
         </ul>
 
@@ -147,7 +147,7 @@ function Navbar() {
         
         {currentUser ? (
           <div className="Navbar-login">
-            <li className="nav-item">
+            <li className="user-nav">
               <Link to={"/profile"} className="nav-link">
                 {currentUser.username}
               </Link>
