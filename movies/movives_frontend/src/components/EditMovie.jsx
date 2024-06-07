@@ -62,12 +62,15 @@ const EditMovie = () => {
     };
 
     return (
-
-    
         <div>
-            <div className='edit-movie-heading'>
-                <h2>Edit Movie</h2>
+            <div className='editmovie-header'>
+                <div>
+                    <Link to="/" className="editmovie-button"><ion-icon name="home-outline"></ion-icon></Link>
+                    <Link to="/movieslist" className="editmovie-button"><ion-icon name="arrow-back-outline"></ion-icon></Link>
+                </div>
+                <h2 className="editmovie-title">Edit movie</h2>
             </div>
+            
             <div>
                 <form className="movie-form">
                 <div className="form-row">

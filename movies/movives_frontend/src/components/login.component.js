@@ -86,7 +86,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="col-md-12">
+      <div>
         <div className="login-header">
           <Link to="/" className="login-button"><ion-icon name="home-outline"></ion-icon></Link>
           <h2 className="login-title">Log in</h2>
@@ -94,8 +94,7 @@ class Login extends Component {
         </div>
 
 
-        <div className="card card-container">
-
+        <div className="login-container">
           <Form
             onSubmit={this.handleLogin}
             ref={c => {
@@ -105,28 +104,27 @@ class Login extends Component {
 
           <div className="form-group">
             <label htmlFor="username">Username</label>
-            <Input
+            <input
               type="text"
               className="username"
               name="username"
               value={this.state.username}
               onChange={this.onChangeUsername}
               validations={[required]}
-              placeholder="Username"
             />
           </div>
 
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <Input
+            <input
               type="password"
               className="password"
               name="password"
               value={this.state.password}
               onChange={this.onChangePassword}
               validations={[required]}
-              placeholder="Password"
             />
+            
           </div>
 
           <div className="button">

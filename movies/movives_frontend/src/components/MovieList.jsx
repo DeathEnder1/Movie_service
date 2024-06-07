@@ -40,31 +40,34 @@ const MovieList = () => {
       <div className="admin-header">
         <Link to="/" className="admin-button"><ion-icon name="home-outline"></ion-icon></Link>
         <h2 className="admin-title">Movie List</h2>
-        <Search />
         <Link to="/add" className="admin-button"><ion-icon name="add-circle-outline"></ion-icon>Add New Movie</Link>
       </div>
 
-      <table className="movie-table">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {movies.map(movie => (
-            <tr key={movie.id} className="movie-row">
-              <td>{movie.title}</td>
-              <td>{movie.year}</td>
-              <td>
-                <Link to={`/edit/${movie.id}`} className="edit-button">Edit</Link>
-                <button className="delete-button" onClick={() => handleDelete(movie.id)}>Delete</button>
-              </td>
+      <div className='table-container'>
+        <table className="movie-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Name</th>
+              <th>Year</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {movies.map(movie => (
+              <tr key={movie.id} className="movie-row">
+                <td><img src={movie.previewimg}/></td>
+                <td>{movie.title}</td>
+                <td>{movie.year}</td>
+                <td>
+                  <button className="edit-button"><Link to={`/edit/${movie.id}`}><ion-icon name="create-outline"></ion-icon></Link></button>
+                  <button className="delete-button" onClick={() => handleDelete(movie.id)}><ion-icon name="trash-outline"></ion-icon></button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

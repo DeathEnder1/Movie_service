@@ -135,11 +135,11 @@ function Navbar() {
                 <a>Manage <ion-icon name="chevron-down-outline"></ion-icon></a>
               </li>
               <ul className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
-                <li>
+                {/* <li>
                   <Link to={"/admin"} className="dropdown-item">
                     Admin Board
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to={"/movieslist"} className="dropdown-item">
                     MovieList

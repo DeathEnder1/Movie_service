@@ -12,10 +12,13 @@
     --color-red: #b12f1b;
 }
 
-body {
-    background: #000;
+body{
+    margin: 0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
-}
+    background: linear-gradient(120deg,#30373c, #0f0d0d);
+    height: 100vh;
+  }
 
 body::-webkit-scrollbar {
     display: none;

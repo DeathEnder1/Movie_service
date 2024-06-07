@@ -125,16 +125,16 @@ export default class Register extends Component {
 
   render() {
     return (
-      <div className="col-md-12">
+      <div>
 
         <div className="signup-header">
           <Link to="/" className="signup-button"><ion-icon name="home-outline"></ion-icon></Link>
           <h2 className="signup-title">Sign up</h2>
-          <Link to="/register" className="signup-button">Log in</Link>
+          <Link to="/login" className="signup-button">Log in</Link>
         </div>
 
 
-        <div className="card card-container">
+        <div className="register-container">
           {/* <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
@@ -185,7 +185,7 @@ export default class Register extends Component {
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="button">
                   <button className="btn btn-primary btn-block">Sign Up</button>
                 </div>
               </div>

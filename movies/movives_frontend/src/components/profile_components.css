@@ -48,14 +48,14 @@
     z-index: 10000;
 }
 
-.profile-tittle{
-    font-family: 'Racing Sans One', cursive;
-    color: #fff;
-    font-size: 35px;
-    letter-spacing: 2px;
-    font-weight: 800;
-    text-decoration: none;
-    text-transform: uppercase;
+.profile-title{
+  font-family: 'Racing Sans One', cursive;
+  color: #fff;
+  font-size: 35px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .profile-button{
@@ -75,26 +75,12 @@
     transition: 0.3s;
     cursor: pointer !important;
     border: none;
+    border-radius: 5px;
 }
 
 .profile-button:hover{
     color: var(--color-red) !important;
     background: #fff !important;
     cursor: pointer !important;
-}
-
-.profile-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.profile-button{
-    text-decoration: none;
-    color: #333;
-    padding: 5px 10px;
-    border: 1px solid #333;
-    border-radius: 5px;
 }
   

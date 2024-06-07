@@ -33,7 +33,7 @@ export default class Profile extends Component {
       <div>
         <div className="profile-header">
           <Link to="/" className="profile-button"><ion-icon name="home-outline"></ion-icon></Link>
-          <h2 className="profile-title" style={{color:"white"}}>Profile</h2>
+          <h2 className="profile-title">Profile</h2>
           <Link to="/login" className="profile-button">Logout</Link>
         </div>
 

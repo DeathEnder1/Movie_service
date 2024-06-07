@@ -1,66 +1,52 @@
-/* EditMovie.css */
-
-/* Container styling */
-.edit-movie-container {
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgb(0, 0, 0);
-}
-
 /* Heading styling */
-.edit-movie-heading {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: white;
-    font-size: 30px;
-    padding-top: 1%;
+.editmovie-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+    transition: 0.5s;
+    z-index: 10000;
 }
 
-/* Form container styling */
-.edit-movie-form-container {
-    background-color: #f9f9f9;
-    border-radius: 1%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.editmovie-header .editmovie-title{
+    font-family: 'Racing Sans One', cursive;
+    color: #fff;
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.editmovie-header .editmovie-button{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 15px;
+    background: var(--color-red);
+    color: #fff;
+    padding: 5px 16px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    cursor: pointer !important;
+    border: none;
+    border-radius: 5px;
+}
+
+.editmovie-header .editmovie-button:hover{
+    color: var(--color-red) !important;
+    background: #fff !important;
+    cursor: pointer !important;
 }
 
 /* Form input styling */
-.edit-movie-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
 
-/* Submit button styling */
-.edit-movie-submit-btn {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.edit-movie-submit-btn:hover {
-    background-color: #0056b3;
-}
-
-.edit-movie-alert {
-    margin-top: 15px;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.edit-movie-alert-success {
-    background-color: #28a745;
-    color: #fff;
-}
-
-.edit-movie-alert-danger {
-    background-color: #dc3545;
-    color: #fff;
-}
