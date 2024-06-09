@@ -70,68 +70,81 @@ const EditMovie = () => {
                 </div>
                 <h2 className="editmovie-title">Edit movie</h2>
             </div>
-            
+
             <div>
-                <form className="movie-form">
-                <div className="form-row">
-                    <label>Title</label>
-                    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-                </div>
-                <div className="form-row">
-                    <label>Title Image</label>
-                    <input type="text" value={titleimg} onChange={(e) => setTitleimg(e.target.value)} />
-                </div >
-                <div className="form-row">
-                    <label>Background Image</label>
-                    <input type="text" value={bgimg} onChange={(e) => setBgimg(e.target.value)} />
-                </div>
-                <div className="form-row">
-                    <label>Preview Image</label>
-                    <input type="text" value={previewimg} onChange={(e) => setPreviewimg(e.target.value)} />
-                </div>
-                <div className="form-row">
-                    <label>Trailer</label>
-                    <input type="text" value={video} onChange={(e) => setVideo(e.target.value)} />
-                </div>
-                <div className="form-row">
-                    <label>Full</label>
-                    <input type="text" value={video2} onChange={(e) => setVideo2(e.target.value)} />
-                </div>
-                <div className="form-row">
-                    <label>Year</label>
-                    <input type="number" value={year} onChange={(e) => setYear(e.target.value)} />
-                </div>
-                <div className="form-row">
-                    <label>Date</label>
-                    <input type="text" value={date} onChange={(e) => setDate(e.target.value)} />
-                </div>
-                <div className="form-row">
-                    <label>AgeLimit</label>
-                    <input type="textr" value={agelimit} onChange={(e) => setAgeLimit(e.target.value)} />
-                </div>
-                <div className="form-row">
-                    <label>Length</label>
-                    <input type="text" value={length} onChange={(e) => setLength(e.target.value)} />
-                </div>
-                <div className="form-row">
-                    <label>Category</label>
-                    <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
-                </div>
-                <div className="form-row">
-                    <label>Type</label>
-                    <input type="text" value={type} onChange={(e) => setType(e.target.value)} />
-                </div>
-                <div className="form-row">
-                    <label>Description</label>
-                    <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-                </div>
-                <div  className="form-row">
-                    <button onClick={(e) => handleEditMovie(e) } className="submit-button">Update Movie</button>
-                <Link to="/movieslist" className="cancel-button"> Cancel </Link>
-                </div>
-                
-            </form>
-            </div>
+    <form className="movie-form">
+        <div className="form-row">
+            
+            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+            <label>Title</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="text" value={titleimg} onChange={(e) => setTitleimg(e.target.value)} />
+            <label>Title Image</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="text" value={bgimg} onChange={(e) => setBgimg(e.target.value)} />
+            <label>Background Image</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="text" value={previewimg} onChange={(e) => setPreviewimg(e.target.value)} />
+            <label>Preview Image</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="text" value={video} onChange={(e) => setVideo(e.target.value)} />
+            <label>Trailer</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="text" value={video2} onChange={(e) => setVideo2(e.target.value)} />
+            <label>Full</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="number" value={year} onChange={(e) => setYear(e.target.value)} />
+            <label>Year</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="text" value={date} onChange={(e) => setDate(e.target.value)} />
+            <label>Date</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="text" value={agelimit} onChange={(e) => setAgeLimit(e.target.value)} />
+            <label>Age Limit</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="text" value={length} onChange={(e) => setLength(e.target.value)} />
+            <label>Length</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
+            <label>Category</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="text" value={type} onChange={(e) => setType(e.target.value)} />
+            <label>Type</label>
+        </div>
+        <div className="form-row">
+            
+            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+            <label>Description</label>
+        </div>
+        <div className="form-row">
+            <button onClick={(e) => handleEditMovie(e)} className="submit-button">Update Movie</button>
+            <Link to="/movieslist" className="cancel-button">Cancel</Link>
+        </div>
+    </form>
+</div>
+
             
         </div>
     );
